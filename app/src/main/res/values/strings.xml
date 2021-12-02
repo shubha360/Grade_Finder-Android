@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Grade Finder</string>
+    <string name="hint_physics">Physics</string>
+    <string name="hint_chemistry">Chemistry</string>
+    <string name="hint_biology">Biology</string>
+    <string name="firstLine">Input marks below (Out of 100)</string>
+    <string name="disciplinary_status">Disciplinary status:</string>
+    <string name="good_3">Good (3)</string>
+    <string name="moderate_2">Moderate (2)</string>
+    <string name="bad_1">Bad (1)</string>
+    <string name="homework_2">Completed Homework 2</string>
+    <string name="homework_1">Completed Homework 1</string>
+    <string name="find_out_grade">Find out grade</string>
+    <string name="grade_obtained">Grade obtained:</string>
+</resources>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:id="@+id/scrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/firstLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/firstLine"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTextLayout_physics"
+            style="@style/Widget.GradeFinder.TextInputLayout.OutlinedBox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_physics"
+            app:layout_constraintStart_toStartOf="@+id/firstLine"
+            app:layout_constraintTop_toBottomOf="@id/firstLine"
+            app:startIconDrawable="@drawable/ic_physics">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputText_physics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTextLayout_chemistry"
+            style="@style/Widget.GradeFinder.TextInputLayout.OutlinedBox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_chemistry"
+            app:layout_constraintStart_toStartOf="@+id/firstLine"
+            app:layout_constraintTop_toBottomOf="@id/inputTextLayout_physics"
+            app:startIconDrawable="@drawable/ic_chemistry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputText_chemistry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTextLayout_biology"
+            style="@style/Widget.GradeFinder.TextInputLayout.OutlinedBox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_biology"
+            app:layout_constraintStart_toStartOf="@+id/firstLine"
+            app:layout_constraintTop_toBottomOf="@id/inputTextLayout_chemistry"
+            app:startIconDrawable="@drawable/ic_biology">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputText_biology"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:imeOptions="actionDone"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/disc_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/disciplinary_status"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintStart_toStartOf="@+id/firstLine"
+            app:layout_constraintTop_toBottomOf="@id/inputTextLayout_biology" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup_disc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/firstLine"
+            app:layout_constraintTop_toBottomOf="@id/disc_heading">
+
+            <RadioButton
+                android:id="@+id/option_good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/good_3"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/option_moderate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/moderate_2"/>
+
+            <RadioButton
+                android:id="@+id/option_bad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bad_1"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/homework_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/firstLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup_disc"
+            android:paddingStart="0dp"
+            android:paddingEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="@string/homework_1" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/homework_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/firstLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homework_1"
+            android:paddingStart="0dp"
+            android:paddingEnd="20dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="@string/homework_2" />
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/find_out_grade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homework_2" />
+
+        <TextView
+            android:id="@+id/result_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculate_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/grade_obtained"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:visibility="gone"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:id="@+id/final_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result_heading"
+            tools:text="A+"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textColor="@color/green"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
